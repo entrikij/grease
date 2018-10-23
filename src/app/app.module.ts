@@ -19,7 +19,8 @@ import { LookbookComponent } from './lookbook/lookbook.component';
     LookbookComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

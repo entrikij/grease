@@ -8,7 +8,7 @@ import { ShopItemComponent } from './shop-item/shop-item.component';
 
 
 const routes: Routes = [
-  {path: '', component: HomeComponent },
+  {path: '', component: ShopComponent },
   {path: 'shop', component: ShopComponent },
   {path: 'shop-item', component: ShopItemComponent },
   {path: 'lookbook', component: LookbookComponent}
