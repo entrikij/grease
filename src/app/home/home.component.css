@@ -1,0 +1,23 @@
+.absolute-center{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.home-item{
+  display: block !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+p{
+  color: #fff;
+  font-size: 1.2em;
+  text-align: center;
+  padding-top:25px;
+}
+
+a, a:hover{
+  text-decoration: none;
+}
