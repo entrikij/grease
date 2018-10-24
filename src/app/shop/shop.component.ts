@@ -44,9 +44,22 @@ export class ShopComponent implements OnInit {
         'left':dest_offset.left,
       }, 500, function(){
         clone.addClass('shop-item-clone-final');
+
+        var clone2 = clone.clone();
+        $dest.hide();
+        clone2.css({
+          'position':'relative',
+          'top':'unset',
+          'left':'unset',
+          'height':'350px'
+        }).appendTo('#shop-item-zone');
+
+        clone.remove();
+        $('#shop-item-expand').removeClass('invisible');
       });
 
-      $('.shop-item').fadeOut(500);
+
+      $('.shop-item:not(#shop-item-dest)').fadeTo(500, 0);
     });
   }
 
