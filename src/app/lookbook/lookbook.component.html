@@ -1,4 +1,10 @@
-<div class="absolute-center" style="width:800px;">
-  <i class="fas fa-angle-right"></i>
+<div class="container-fluid full-height">
+  <div class="row" style="height:100%;">
+    <div class="col-12 col-md-12 mt-0 mt-md-4 text-center">
+      <a href="" [routerLink]="['/']"><img src="assets/grease.png" style="width:100%; max-width:200px;"></a>
+    </div>
+  </div>
+<div id="lookbook-page" class="absolute-center" style="width:95%">
   <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+</div>
 </div>

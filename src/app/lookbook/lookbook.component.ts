@@ -15,15 +15,12 @@ export class LookbookComponent implements OnInit {
     this.galleryOptions = [
             {
                 thumbnails: false,
-                previewCloseOnClick: true,
+                preview: false,
                 imageInfinityMove: true,
-                arrowPrevIcon: "fas fa-angle-left",
-                arrowNextIcon: "fas fa-angle-right"
-            },
-            {
-                breakpoint: 500,
                 width: '100%',
-                height: '200px'
+                arrowPrevIcon: "fa fa-angle-left",
+                arrowNextIcon: "fa fa-angle-right",
+                imageSize: "contain"
             }
         ];
         this.galleryImages = [
