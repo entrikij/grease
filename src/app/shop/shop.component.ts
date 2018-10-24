@@ -12,10 +12,27 @@ export class ShopComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    function checkBreakpoint(breakpoint){
+      return !($('#' + breakpoint + '-check').is(':hidden'));
+    }
+
+    function getContainer(){
+      var container = '';
+      if(checkBreakpoint('xs') || checkBreakpoint('sm')){
+        container = '#shop-item-expand'
+      }
+      else{
+        container = '#shop-item-expand-desktop'
+      }
+      return container;
+    }
+
     $('.shop-item').click(function(){
+      var container = getContainer();
+
       $('body').addClass('shop-item-open');
 
-      var $dest = $('#shop-item-dest');
+      var $dest = $(container).find('.shop-item-dest');
 
       $dest.removeClass('hidden');
 
@@ -46,23 +63,38 @@ export class ShopComponent implements OnInit {
         clone.addClass('shop-item-clone-final');
 
         var clone2 = clone.clone();
-        $dest.hide();
+        $dest.addClass('hidden');
         clone2.css({
           'position':'relative',
           'top':'unset',
           'left':'unset',
           'height':'350px'
-        }).appendTo('#shop-item-zone');
+        }).attr('id','shop-item-lg').appendTo(container + ' > .shop-item-zone');
 
         clone.remove();
-        $('#shop-item-expand').removeClass('invisible');
       });
 
+      $(container).removeClass('invisible');
+      $(container).find('.shop-item-controls').fadeIn(500);
+      $(container).find('.shop-item-close').fadeIn(500);
+      $('.shop-item:not(.shop-item-dest)').fadeTo(500, 0);
+    });
 
-      $('.shop-item:not(#shop-item-dest)').fadeTo(500, 0);
+
+    $('.shop-item-close').click(function(){
+      var container = getContainer();
+
+      $('.shop-item:not(.shop-item-dest)').fadeTo(500, 1);
+      $(container).find('.shop-item-lg').fadeOut(500);
+      $(container).find('.shop-item-controls').fadeOut(500);
+      $(container).find('.shop-item-close').fadeOut(500);
+
+      setTimeout(function(){
+        $(container).addClass('invisible');
+        $('#shop-item-lg').remove();
+      }, 500);
     });
   }
-
 
   InitializeShopifyItem(idVal): void{
     if(idVal == "soldout"){

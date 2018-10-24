@@ -1,23 +1,38 @@
 .shop-item{
   display:inline;
+  cursor: pointer;
 }
 
 #shop-item-expand{
   position:absolute;
-  height:95%;
   width:100%;
   top:0;
   left:0;
 }
 
-#shop-item-zone{
-  height:70%;
+#shop-item-expand-desktop{
+  position:relative;
   width:100%;
 }
 
-#shop-item-controls{
-  height:30%;
+.shop-item-zone{
   width:100%;
+}
+
+.shop-item-controls{
+  width:100%;
+  display:none;
+}
+
+.shop-item-close{
+  position:absolute;
+  top:10px;
+  left:10px;
+  color: #c4c4c4;
+  font-size:1.6rem;
+  padding:6px;
+  cursor:pointer;
+  display:none;
 }
 
 .invisible{
@@ -32,4 +47,49 @@
   display: inline-block;
   height: 100%;
   vertical-align: middle;
+}
+
+#xs-check{
+  display:none;
+}
+#sm-check{
+  display:none;
+}
+#md-check{
+  display:none;
+}
+
+
+
+
+
+
+
+
+
+@media all and (max-width: 575.98px) {
+  #xs-check{
+    display:block;
+  }
+  #sm-check{
+    display:none;
+  }
+  #md-check{
+    display:none;
+  }
+}
+
+@media all and (max-width: 767.98px) {
+  #sm-check{
+    display:block;
+  }
+  #md-check{
+    display:none;
+  }
+}
+
+@media all and (max-width: 991.98px) {
+  #md-check{
+    display:block;
+  }
 }
