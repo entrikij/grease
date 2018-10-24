@@ -37,10 +37,10 @@ export class ShopItemComponent implements OnInit {
             "styles":{
               "product":{"text-align":"center","@media (min-width: 601px)":{"max-width":"calc(25% - 20px)","margin-left":"20px","margin-bottom":"50px"}},
               "button": {
-                "color": "#fff",
+                "color": "#ff00e7",
                 "background": "transparent",
-                "border": "1px solid #fff",
-                "font-family": "\"WebsiteFont\", \"Helvetica Neue\", Arial",
+                "border": "1.5px solid #e628b6",
+                "font-family": "Quantico, sans-serif",
                 "font-weight": "bold",
                 "font-size": "0.9em",
                 ":hover": {"background-color": "transparent"},
@@ -59,7 +59,10 @@ export class ShopItemComponent implements OnInit {
               "buttonWrapper":{
                 "text-align": "start"
               }
-            }
+            },
+            "googleFonts": [
+              "Quantico"
+            ]
           },
           "option":{
             "styles":{
@@ -71,8 +74,8 @@ export class ShopItemComponent implements OnInit {
               },
               "wrapper":{
                 "background-color":"transparent",
-                "border-color":"white",
-                "border-width":"1px",
+                "border-color":"#e628b6",
+                "border-width":"1.5px",
                 "text-align-last":"center",
                 "text-align":"center",
                 "vertical-align":"center",
@@ -82,8 +85,8 @@ export class ShopItemComponent implements OnInit {
                 }
               },
               "select":{
-                "color":"white",
-                "font-family": "\"Helvetica Neue\", Arial",
+                "color":"#ff00e7",
+                "font-family": "Quantico, sans-serif",
                 "font-weight": "bold",
                 "font-size": "0.9em",
                 "margin-left":"-2px",
@@ -91,10 +94,10 @@ export class ShopItemComponent implements OnInit {
                 ":focus":{
                   "outline":"0 !important"
                 },
-                "padding":"7px 5px 7px 5px"
+                "padding":"7px 5px 7px 5px",
               },
               "selectIcon":{
-                "fill":"white",
+                "fill":"#ff00e7",
                 ":focus":{
                   "outline":"0 !important"
                 }
@@ -102,7 +105,10 @@ export class ShopItemComponent implements OnInit {
               "optionSelected":{
                 "color": "white"
               }
-            }
+            },
+            "googleFonts": [
+              "Quantico"
+            ]
           },
           "cart":{"contents":{"button":true},
           "styles":{
