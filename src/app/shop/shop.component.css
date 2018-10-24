@@ -1,7 +1,35 @@
+.shop-item{
+  display:inline;
+}
+
 #shop-item-expand{
   position:absolute;
   height:100%;
   width:100%;
   top:0;
   left:0;
+}
+
+#shop-item-zone{
+  height:70%;
+  width:100%;
+}
+
+#shop-item-controls{
+  height:30%;
+  width:100%;
+}
+
+.invisible{
+  visibility:hidden;
+}
+
+.hidden{
+  display:none;
+}
+
+.helper{
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
 }

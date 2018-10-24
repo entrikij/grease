@@ -12,6 +12,42 @@ export class ShopComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    $('.shop-item').click(function(){
+      $('body').addClass('shop-item-open');
+
+      var $dest = $('#shop-item-dest');
+
+      $dest.removeClass('hidden');
+
+      var offset = $(this).offset();
+      var height = $(this).height();
+      var clone = $(this).clone();
+      var expand_height = '350px';
+      var expand_left = '10%';
+
+      var dest_offset = $dest.offset();
+      var dest_width = $dest.width();
+
+      // $(this).animate({
+      //    'opacity':'0'
+      // }, 0);
+
+      clone.toggleClass('invisible shop-item').appendTo("body").css({
+        'position':'fixed',
+        'top':offset.top - window.scrollY,
+        'left':offset.left,
+        'height':height
+        //'transform':'translateX(-50%)'
+      }).removeClass('invisible').animate({
+        'height':expand_height,
+        'top':dest_offset.top - window.scrollY,
+        'left':dest_offset.left,
+      }, 500, function(){
+        clone.addClass('shop-item-clone-final');
+      });
+
+      $('.shop-item').fadeOut(500);
+    });
   }
 
 
@@ -136,4 +172,39 @@ export class ShopComponent implements OnInit {
     }
   }
 
+
+  InitializeItemAnimation(): void{
+    $('.shop-item').click(function(){
+      $('body').addClass('modal-open');
+
+      var offset = $(this).offset();
+      var width = $(this).width();
+      var clone = $(this).clone();
+      var expand_width = '80%';
+      var expand_left = '10%';
+
+      // $(this).animate({
+      //    'opacity':'0'
+      // }, 0);
+
+      clone.toggleClass('invisible').appendTo("body").css({
+        'position':'fixed',
+        'top':offset.top - window.scrollY,
+        'left':offset.left,
+        'width':width
+        //'transform':'translateX(-50%)'
+      }).removeClass('invisible').animate({
+        'width':expand_width,
+        'height':'50vh',
+        'top':'25px',
+        'left':expand_left,
+        'background-color':'white',
+        'box-shadow':'0 0 6px 3px black'
+      }, 300, function(){
+        clone.addClass('content-item-clone-final');
+      });
+
+      $('.overlay').fadeIn(300);
+    });
+  }
 }
