@@ -16,23 +16,23 @@
 }
 
 .shop-item-zone{
-  width:100%;
+  width:fit-content;
+  display:inline;
 }
 
 .shop-item-controls{
   width:100%;
-  display:none;
 }
 
 .shop-item-close{
   position:absolute;
-  top:10px;
-  left:10px;
+  display:inline;
+  left:-40px;
   color: #c4c4c4;
-  font-size:1.6rem;
+  font-size:2.5rem;
   padding:6px;
   cursor:pointer;
-  display:none;
+  /*display:none;*/
 }
 
 .invisible{
