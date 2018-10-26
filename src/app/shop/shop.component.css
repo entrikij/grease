@@ -9,6 +9,10 @@
   opacity: 0.7;
 }
 
+.shopify-btns{
+  margin:0 auto;
+}
+
 .coming-soon{
   cursor: default;
   position: absolute;
@@ -77,10 +81,6 @@
 #md-check{
   display:none;
 }
-
-
-
-
 
 
 

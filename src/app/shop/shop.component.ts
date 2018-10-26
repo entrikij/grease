@@ -13,9 +13,7 @@ export class ShopComponent implements OnInit {
 
   ngOnInit() {
 
-    //** for starting desktop item
-    this.price = 25;
-    //this.InitializeShopifyItem("564217249849");
+    this.LoadProductInfo('a');
 
     let self = this;
     var activeItem = '';
@@ -185,7 +183,7 @@ export class ShopComponent implements OnInit {
           var container_hidden = screenInfo.container_hidden;
           var size = screenInfo.size;
 
-          activateProduct(this, container_visible, container_hidden, size);  
+          activateProduct(this, container_visible, container_hidden, size);
         }
     });
 
@@ -214,25 +212,35 @@ export class ShopComponent implements OnInit {
   LoadProductInfo(activeItemId: string){
     if(activeItemId === 'a'){
       this.price = 25;
-      //this.InitializeShopifyItem("564217249849");
+      this.ClearOldBtns();
+      this.InitializeShopifyItem("1781270347833");
     }
     if(activeItemId === 'b'){
       this.price = 25;
-      //this.InitializeShopifyItem("564217249849");
+      this.ClearOldBtns();
+      this.InitializeShopifyItem("1781270708281");
     }
     if(activeItemId === 'c'){
       this.price = 30;
-      //this.InitializeShopifyItem("564217249849");
+      this.ClearOldBtns();
+      this.InitializeShopifyItem("1781267267641");
     }
     if(activeItemId === 'd'){
       this.price = 45;
-      //this.InitializeShopifyItem("564217249849");
+      this.ClearOldBtns();
+      this.InitializeShopifyItem("1781270937657");
     }
     if(activeItemId === 'e'){
       this.price = 45;
-      //this.InitializeShopifyItem("564217249849");
+      this.ClearOldBtns();
+      this.InitializeShopifyItem("1781271167033");
     }
 
+  }
+
+  ClearOldBtns(): void{
+    $('#product-component1 iframe').remove();
+    $('#product-component2 iframe').remove();
   }
   InitializeShopifyItem(idVal): void{
     if(idVal == "soldout"){
@@ -242,8 +250,7 @@ export class ShopComponent implements OnInit {
       $('#sold-out').hide();
       var client = ShopifyBuy.buildClient({
         domain: 'greasemerch.myshopify.com',
-        apiKey: '270d86d30fc3da6e01619d075834f350',
-        appId: '6',
+        storefrontAccessToken: '270d86d30fc3da6e01619d075834f350',
       });
       ShopifyBuy.UI.onReady(client).then(function (ui) {
         ui.createComponent('product', {

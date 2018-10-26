@@ -12,7 +12,7 @@ export class ShopItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.InitializeShopifyItem("1361238786149");
+    this.InitializeShopifyItem("1781270347833");
   }
 
   InitializeShopifyItem(idVal): void{
@@ -22,8 +22,8 @@ export class ShopItemComponent implements OnInit {
     else{
       $('#sold-out').hide();
       var client = ShopifyBuy.buildClient({
-        domain: 'roy-blair.myshopify.com',
-        storefrontAccessToken: 'c4436ef009919a87987bc103df1e3fa1',
+        domain: 'greasemerch.myshopify.com',
+        storefrontAccessToken: '270d86d30fc3da6e01619d075834f350',
       });
       ShopifyBuy.UI.onReady(client).then(function (ui) {
         ui.createComponent('product', {
