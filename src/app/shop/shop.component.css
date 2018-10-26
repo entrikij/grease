@@ -113,10 +113,10 @@
   }
 }
 
-@media all and (min-width: 767.98px) {
+@media all and (min-width: 767.98px) and (min-height:700px) {
   .container-fluid{
     position: absolute;
     top: 50%;
-    transform: translateY(-55%);
+    transform: translateY(-53%);
   }
 }
