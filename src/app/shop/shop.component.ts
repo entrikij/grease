@@ -8,12 +8,16 @@ declare var ShopifyBuy: any;
   styleUrls: ['./shop.component.css']
 })
 export class ShopComponent implements OnInit {
-
+  price: number = 0;
   constructor() { }
 
   ngOnInit() {
-    this.InitializeShopifyItem("564217249849");
 
+    //** for starting desktop item
+    this.price = 25;
+    //this.InitializeShopifyItem("564217249849");
+
+    let self = this;
     var activeItem = '';
     var running = 0;
 
@@ -84,6 +88,7 @@ export class ShopComponent implements OnInit {
         fadeOutProduct();
 
         activeItem = $(item).attr('itemnum');
+        self.LoadProductInfo(activeItem);
 
         $('body').addClass('shop-item-open');
 
@@ -174,12 +179,14 @@ export class ShopComponent implements OnInit {
     }
 
     $('.shop-item').click(function(){
-        var screenInfo = getScreenInfo();
-        var container_visible = screenInfo.container_visible;
-        var container_hidden = screenInfo.container_hidden;
-        var size = screenInfo.size;
+        if(!$(this).hasClass('shop-item-na')){
+          var screenInfo = getScreenInfo();
+          var container_visible = screenInfo.container_visible;
+          var container_hidden = screenInfo.container_hidden;
+          var size = screenInfo.size;
 
-        activateProduct(this, container_visible, container_hidden, size);
+          activateProduct(this, container_visible, container_hidden, size);  
+        }
     });
 
 
@@ -203,6 +210,30 @@ export class ShopComponent implements OnInit {
     });
   }
 
+
+  LoadProductInfo(activeItemId: string){
+    if(activeItemId === 'a'){
+      this.price = 25;
+      //this.InitializeShopifyItem("564217249849");
+    }
+    if(activeItemId === 'b'){
+      this.price = 25;
+      //this.InitializeShopifyItem("564217249849");
+    }
+    if(activeItemId === 'c'){
+      this.price = 30;
+      //this.InitializeShopifyItem("564217249849");
+    }
+    if(activeItemId === 'd'){
+      this.price = 45;
+      //this.InitializeShopifyItem("564217249849");
+    }
+    if(activeItemId === 'e'){
+      this.price = 45;
+      //this.InitializeShopifyItem("564217249849");
+    }
+
+  }
   InitializeShopifyItem(idVal): void{
     if(idVal == "soldout"){
       $('#sold-out').show();
