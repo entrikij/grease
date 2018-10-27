@@ -11,3 +11,30 @@ html, body{
   font-size: 2.2em;
   color: #ffffff96;
 }
+
+/*shopify cart*/
+.shopify-buy-frame--toggle {
+  display: block !important;
+}
+@media(min-width: 0px){
+  .shopify-buy-frame--toggle{
+    top: 0 !important;
+    padding-top: 215px;
+    padding-right: 30px;
+    position: absolute !important;
+  }
+}
+
+@media(min-width: 650px){
+  .shopify-buy-frame--toggle{
+    top: 0 !important;
+    padding-top: 65px;
+    padding-right: 15px;
+  }
+}
+
+
+#launcher, #webWidget, .zEWidget-launcher {
+    right: 0px !important;
+    left: inherit !important;
+}

@@ -176,14 +176,14 @@ export class ShopComponent implements OnInit {
       }
     }
 
-    $('.shop-item').click(function(){
+    $('.shop-item-container').click(function(){
         if(!$(this).hasClass('shop-item-na')){
           var screenInfo = getScreenInfo();
           var container_visible = screenInfo.container_visible;
           var container_hidden = screenInfo.container_hidden;
           var size = screenInfo.size;
-
-          activateProduct(this, container_visible, container_hidden, size);
+          let shopItem = $(this).find('.shop-item');
+          activateProduct(shopItem, container_visible, container_hidden, size);
         }
     });
 
@@ -263,9 +263,9 @@ export class ShopComponent implements OnInit {
               "styles":{
                 "product":{"text-align":"center","@media (min-width: 601px)":{"max-width":"calc(25% - 20px)","margin-left":"20px","margin-bottom":"50px"}},
                 "button": {
-                  "color": "#ff00e7",
+                  "color": "#e0e0e0",
                   "background": "transparent",
-                  "border": "1.5px solid #e628b6",
+                  "border": "1.5px solid #e0e0e0",
                   "font-family": "Quantico, sans-serif",
                   "font-weight": "bold",
                   "font-size": "0.9em",
@@ -300,7 +300,7 @@ export class ShopComponent implements OnInit {
                 },
                 "wrapper":{
                   "background-color":"transparent",
-                  "border-color":"#e628b6",
+                  "border-color":"#e0e0e0",
                   "border-width":"1.5px",
                   "text-align-last":"center",
                   "text-align":"center",
@@ -311,7 +311,7 @@ export class ShopComponent implements OnInit {
                   }
                 },
                 "select":{
-                  "color":"#ff00e7",
+                  "color":"#e0e0e0",
                   "font-family": "Quantico, sans-serif",
                   "font-weight": "bold",
                   "font-size": "0.9em",
@@ -323,7 +323,7 @@ export class ShopComponent implements OnInit {
                   "padding":"7px 5px 7px 5px",
                 },
                 "selectIcon":{
-                  "fill":"#ff00e7",
+                  "fill":"#e0e0e0",
                   ":focus":{
                     "outline":"0 !important"
                   }
@@ -348,11 +348,11 @@ export class ShopComponent implements OnInit {
             "toggle":{
               "styles":{
                 "toggle":{
-                  "background-color": "transparent",
-                  "color": "#000"
+                  "background-color": "transparent !important",
+                  "color": "#fff"
                 },
                 "iconPath":{
-                  "fill": "#000"
+                  "fill": "#fff"
                 },
                 "count":{
                   "font-size": "11px",
@@ -379,9 +379,9 @@ export class ShopComponent implements OnInit {
               "styles":{
                 "product":{"text-align":"center","@media (min-width: 601px)":{"max-width":"calc(25% - 20px)","margin-left":"20px","margin-bottom":"50px"}},
                 "button": {
-                  "color": "#ff00e7",
+                  "color": "#e0e0e0",
                   "background": "transparent",
-                  "border": "1.5px solid #e628b6",
+                  "border": "1.5px solid #e0e0e0",
                   "font-family": "Quantico, sans-serif",
                   "font-weight": "bold",
                   "font-size": "0.9em",
@@ -416,7 +416,7 @@ export class ShopComponent implements OnInit {
                 },
                 "wrapper":{
                   "background-color":"transparent",
-                  "border-color":"#e628b6",
+                  "border-color":"#e0e0e0",
                   "border-width":"1.5px",
                   "text-align-last":"center",
                   "text-align":"center",
@@ -427,7 +427,7 @@ export class ShopComponent implements OnInit {
                   }
                 },
                 "select":{
-                  "color":"#ff00e7",
+                  "color":"#e0e0e0",
                   "font-family": "Quantico, sans-serif",
                   "font-weight": "bold",
                   "font-size": "0.9em",
@@ -439,7 +439,7 @@ export class ShopComponent implements OnInit {
                   "padding":"7px 5px 7px 5px",
                 },
                 "selectIcon":{
-                  "fill":"#ff00e7",
+                  "fill":"#e0e0e0",
                   ":focus":{
                     "outline":"0 !important"
                   }
@@ -464,11 +464,11 @@ export class ShopComponent implements OnInit {
             "toggle":{
               "styles":{
                 "toggle":{
-                  "background-color": "transparent",
-                  "color": "#000"
+                  "background-color": "transparent !important",
+                  "color": "#fff"
                 },
                 "iconPath":{
-                  "fill": "#000"
+                  "fill": "#fff"
                 },
                 "count":{
                   "font-size": "11px",
