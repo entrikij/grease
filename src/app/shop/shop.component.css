@@ -23,6 +23,12 @@
   color: #ffffff5c;
 }
 
+.sold-out{
+  font-size: 28px;
+  color: #e0e0e0;
+  display: none;
+}
+
 #shop-item-expand{
   position:absolute;
   width:100%;

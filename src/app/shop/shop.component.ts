@@ -244,10 +244,10 @@ export class ShopComponent implements OnInit {
   }
   InitializeShopifyItem(idVal): void{
     if(idVal == "soldout"){
-      $('#sold-out').show();
+      $('.sold-out').show();
     }
     else{
-      $('#sold-out').hide();
+      $('.sold-out').hide();
       var client = ShopifyBuy.buildClient({
         domain: 'greasemerch.myshopify.com',
         storefrontAccessToken: '270d86d30fc3da6e01619d075834f350',
