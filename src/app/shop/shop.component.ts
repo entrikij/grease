@@ -213,27 +213,27 @@ export class ShopComponent implements OnInit {
     if(activeItemId === 'a'){
       this.price = 25;
       this.ClearOldBtns();
-      this.InitializeShopifyItem("1781270347833");
+      this.InitializeShopifyItem("soldout");
     }
     if(activeItemId === 'b'){
       this.price = 25;
       this.ClearOldBtns();
-      this.InitializeShopifyItem("1781270708281");
+      this.InitializeShopifyItem("soldout");
     }
     if(activeItemId === 'c'){
       this.price = 30;
       this.ClearOldBtns();
-      this.InitializeShopifyItem("1781267267641");
+      this.InitializeShopifyItem("soldout");
     }
     if(activeItemId === 'd'){
       this.price = 45;
       this.ClearOldBtns();
-      this.InitializeShopifyItem("1781270937657");
+      this.InitializeShopifyItem("soldout");
     }
     if(activeItemId === 'e'){
       this.price = 45;
       this.ClearOldBtns();
-      this.InitializeShopifyItem("1781271167033");
+      this.InitializeShopifyItem("soldout");
     }
 
   }
