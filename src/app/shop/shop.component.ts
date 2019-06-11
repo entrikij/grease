@@ -213,7 +213,7 @@ export class ShopComponent implements OnInit {
     if(activeItemId === 'a'){
       this.price = 25;
       this.ClearOldBtns();
-      this.InitializeShopifyItem("1781270347833");
+      this.InitializeShopifyItem("soldout");
     }
     if(activeItemId === 'b'){
       this.price = 25;
